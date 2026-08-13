@@ -26,10 +26,18 @@ def add():
     }
     products.append(product)
     save("data/products.json", products)
-
+# Display all products.
 def show():
     products = load("data/products.json")
     for i in products:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+# Search for a product by name.
+def search():
+    products = load("data/products.json")
+    name = input("Enter product name: ")
+    for i in products:
+        if name.lower() in i["name"].lower():
+            print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+
 
     
