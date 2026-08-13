@@ -49,3 +49,18 @@ def search_category():
             print(i["id"],i["name"],i["category"],i["price"],i["stock"])
         else:
             print("Product not found!")
+# Delete a product from the store.
+def delete():
+    flag = False
+    products = load("data/products.json")
+    product_id = int(input("Enter product ID: "))
+    for i in products:
+        if product_id == i["id"]:
+            flag = True
+        if flag:
+            products.remove(i)
+            print("Product deleted successfully!")
+            break
+    if not flag:
+        print("Product not found!")
+    save("data/products.json",products)
