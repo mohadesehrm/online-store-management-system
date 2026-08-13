@@ -26,3 +26,10 @@ def add():
     }
     products.append(product)
     save("data/products.json", products)
+
+def show():
+    products = load("data/products.json")
+    for i in products:
+        print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+
+    
