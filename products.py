@@ -32,12 +32,20 @@ def show():
     for i in products:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Search for a product by name.
-def search():
+def search_name():
     products = load("data/products.json")
     name = input("Enter product name: ")
     for i in products:
         if name.lower() in i["name"].lower():
             print(i["id"],i["name"],i["category"],i["price"],i["stock"])
-
-
-    
+        else:
+            print("Product not found!")
+# Search for products by category.
+def search_category():
+    products = load("data/products.json")
+    category = input("Enter product category: ")
+    for i in products:
+        if category.lower() in i["category"].lower():
+            print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+        else:
+            print("Product not found!")
