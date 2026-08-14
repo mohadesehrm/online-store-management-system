@@ -86,4 +86,10 @@ def update():
     else:
         print("Product not found!")
     save("data/products.json",products)
+# Sort products by price.
+def sort_price():
+    products = load("data/products.json")
+    products_sort = sorted(products,key=lambda i : i["price"])
+    for i in products_sort:
+        print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 
