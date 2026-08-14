@@ -104,3 +104,9 @@ def filter_products():
     products_filter = list(filter(lambda i : i["stock"]>0,products))
     for i in products_filter:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+# Calculate the total inventory value of each product.
+def inventory_value():
+    products = load("data/products.json")
+    value = list(map(lambda i : (i["name"] , i["price"] * i["stock"]), products))
+    for i in value:
+        print(i[0],i[1])
