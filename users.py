@@ -59,3 +59,9 @@ def update_user():
             print("User updated successfully!")
             return
     print("User not found!")
+# Display VIP users.
+def show_vip_users():
+    users = load("data/users.json")
+    for i in users:
+        if i["vip"].lower() == "yes":
+            print(i)
