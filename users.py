@@ -45,3 +45,17 @@ def delete_user():
             print("User deleted successfully!")
             return
     print("User not found!")
+# Update an existing user.
+def update_user():
+    users = load("data/users.json")
+    user_id = int(input("Enter user ID: "))
+    for i in users:
+        if i["id"] == user_id:
+            i["name"] = input("Enter user name: ")
+            i["phone"] = input("Enter user phone: ")
+            i["city"] = input("Enter user city: ")
+            i["vip"] = input("Enter user vip: ")
+            save("data/users.json", users)
+            print("User updated successfully!")
+            return
+    print("User not found!")
