@@ -25,3 +25,12 @@ def show_users():
     users = load("data/users.json")
     for i in users:
         print(i["id"],i["name"],i["phone"],i["city"],i["vip"])
+# Search for a user by ID.
+def search_user():
+    users = load("data/users.json")
+    user_id = int(input("Enter user ID: "))
+    for i in users:
+        if i["id"] == user_id:
+            print(i)
+            return
+    print("User not found!")
