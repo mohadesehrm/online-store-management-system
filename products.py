@@ -98,3 +98,9 @@ def sort_stock():
     products_sort = sorted(products,key=lambda i : i["stock"])
     for i in products_sort:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
+# Filter products that are in stock.
+def filter_products():
+    products = load("data/products.json")
+    products_filter = list(filter(lambda i : i["stock"]>0,products))
+    for i in products_filter:
+        print(i["id"],i["name"],i["category"],i["price"],i["stock"])
