@@ -20,7 +20,7 @@ def add_user():
     }
     users.append(user)
     save("data/users.json",users)
-# Add a new user.
+# Display all users.
 def show_users():
     users = load("data/users.json")
     for i in users:
