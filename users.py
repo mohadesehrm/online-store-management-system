@@ -34,3 +34,14 @@ def search_user():
             print(i)
             return
     print("User not found!")
+# Delete a user by ID.
+def delete_user():
+    users = load("data/users.json")
+    user_id = int(input("Enter user ID: "))
+    for i in users:
+        if i["id"] == user_id:
+            users.remove(i)
+            save("data/users.json", users)
+            print("User deleted successfully!")
+            return
+    print("User not found!")
