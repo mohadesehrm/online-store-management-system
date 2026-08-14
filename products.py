@@ -92,4 +92,9 @@ def sort_price():
     products_sort = sorted(products,key=lambda i : i["price"])
     for i in products_sort:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
-
+# Sort products by stock.
+def sort_stock():
+    products = load("data/products.json")
+    products_sort = sorted(products,key=lambda i : i["stock"])
+    for i in products_sort:
+        print(i["id"],i["name"],i["category"],i["price"],i["stock"])
