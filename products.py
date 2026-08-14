@@ -64,3 +64,26 @@ def delete():
     if not flag:
         print("Product not found!")
     save("data/products.json",products)
+# Update an existing product.
+def update():
+    products = load("data/products.json")
+    product_id = int(input("Enter product ID: "))
+    flag = False
+    for i in products:
+        if product_id == i["id"]:
+            flag = True
+            break
+    if flag:
+        name = input("Enter product name: ")
+        i["name"] = name
+        category = input("Enter product category: ")
+        i["category"] = category
+        price = int(input("Enter product price: "))
+        i["price"] = price
+        stock = int(input("Enter product stock: "))
+        i["stock"] = stock
+        print("Product updated successfully!")
+    else:
+        print("Product not found!")
+    save("data/products.json",products)
+
