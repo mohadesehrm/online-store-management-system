@@ -110,3 +110,14 @@ def inventory_value():
     value = list(map(lambda i : (i["name"] , i["price"] * i["stock"]), products))
     for i in value:
         print(i[0],i[1])
+# Check if any product is out of stock.
+def check_stock():
+    products = load("data/products.json")
+    flag = any(i["stock"] == 0  for i in products)
+    if flag:
+        print("There are out-of-stock products: ")
+        for i in products:
+            if i["stock"] == 0:
+                print(f"{i["name"]}\n")
+    else:
+        print("All products are in stock!")
