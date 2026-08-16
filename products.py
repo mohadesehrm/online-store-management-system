@@ -1,7 +1,7 @@
 from utils import load,save
 products = load("data/products.json")
 # Add a new product to the store.
-def add():
+def add_product():
     product_id = int(input("Enter product ID: "))
     for i in products:
         if i["id"] == product_id:
@@ -27,7 +27,7 @@ def add():
     products.append(product)
     save("data/products.json", products)
 # Display all products.
-def show():
+def show_product():
     for i in products:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Search for a product by name.
@@ -47,7 +47,7 @@ def search_category():
         else:
             print("Product not found!")
 # Delete a product from the store.
-def delete():
+def delete_product():
     flag = False
     product_id = int(input("Enter product ID: "))
     for i in products:
@@ -61,7 +61,7 @@ def delete():
         print("Product not found!")
     save("data/products.json",products)
 # Update an existing product.
-def update():
+def update_product():
     product_id = int(input("Enter product ID: "))
     flag = False
     for i in products:
