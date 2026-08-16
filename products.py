@@ -1,7 +1,7 @@
 from utils import load,save
+products = load("data/products.json")
 # Add a new product to the store.
 def add():
-    products = load("data/products.json")
     product_id = int(input("Enter product ID: "))
     for i in products:
         if i["id"] == product_id:
@@ -28,12 +28,10 @@ def add():
     save("data/products.json", products)
 # Display all products.
 def show():
-    products = load("data/products.json")
     for i in products:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Search for a product by name.
 def search_name():
-    products = load("data/products.json")
     name = input("Enter product name: ")
     for i in products:
         if name.lower() in i["name"].lower():
@@ -42,7 +40,6 @@ def search_name():
             print("Product not found!")
 # Search for products by category.
 def search_category():
-    products = load("data/products.json")
     category = input("Enter product category: ")
     for i in products:
         if category.lower() in i["category"].lower():
@@ -52,7 +49,6 @@ def search_category():
 # Delete a product from the store.
 def delete():
     flag = False
-    products = load("data/products.json")
     product_id = int(input("Enter product ID: "))
     for i in products:
         if product_id == i["id"]:
@@ -66,7 +62,6 @@ def delete():
     save("data/products.json",products)
 # Update an existing product.
 def update():
-    products = load("data/products.json")
     product_id = int(input("Enter product ID: "))
     flag = False
     for i in products:
@@ -88,31 +83,26 @@ def update():
     save("data/products.json",products)
 # Sort products by price.
 def sort_price():
-    products = load("data/products.json")
     products_sort = sorted(products,key=lambda i : i["price"])
     for i in products_sort:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Sort products by stock.
 def sort_stock():
-    products = load("data/products.json")
     products_sort = sorted(products,key=lambda i : i["stock"])
     for i in products_sort:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Filter products that are in stock.
 def filter_products():
-    products = load("data/products.json")
     products_filter = list(filter(lambda i : i["stock"]>0,products))
     for i in products_filter:
         print(i["id"],i["name"],i["category"],i["price"],i["stock"])
 # Calculate the total inventory value of each product.
 def inventory_value():
-    products = load("data/products.json")
     value = list(map(lambda i : (i["name"] , i["price"] * i["stock"]), products))
     for i in value:
         print(i[0],i[1])
 # Check if any product is out of stock.
 def check_stock():
-    products = load("data/products.json")
     flag = any(i["stock"] == 0  for i in products)
     if flag:
         print("There are out-of-stock products: ")

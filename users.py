@@ -1,7 +1,7 @@
 from utils import save,load
+users = load("data/users.json")
 # Add a new user.
 def add_user():
-    users = load("data/users.json")
     users_id = int(input("Enter user id: "))
     for i in users:
         if i["id"] == users_id:
@@ -22,12 +22,10 @@ def add_user():
     save("data/users.json",users)
 # Display all users.
 def show_users():
-    users = load("data/users.json")
     for i in users:
         print(i["id"],i["name"],i["phone"],i["city"],i["vip"])
 # Search for a user by ID.
 def search_user():
-    users = load("data/users.json")
     user_id = int(input("Enter user ID: "))
     for i in users:
         if i["id"] == user_id:
@@ -36,7 +34,6 @@ def search_user():
     print("User not found!")
 # Delete a user by ID.
 def delete_user():
-    users = load("data/users.json")
     user_id = int(input("Enter user ID: "))
     for i in users:
         if i["id"] == user_id:
@@ -47,7 +44,6 @@ def delete_user():
     print("User not found!")
 # Update an existing user.
 def update_user():
-    users = load("data/users.json")
     user_id = int(input("Enter user ID: "))
     for i in users:
         if i["id"] == user_id:
@@ -61,7 +57,6 @@ def update_user():
     print("User not found!")
 # Display VIP users.
 def show_vip_users():
-    users = load("data/users.json")
     for i in users:
         if i["vip"].lower() == "yes":
             print(i)
