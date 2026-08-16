@@ -344,9 +344,9 @@
     },
     {
         "id": 50,
-        "name": "Digital Camera",
-        "category": "Photography",
-        "price": 42000,
-        "stock": 0
+        "name": "Game Controller",
+        "category": "Gaming",
+        "price": 5200,
+        "stock": 7
     }
 ]
