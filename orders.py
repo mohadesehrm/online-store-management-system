@@ -47,4 +47,16 @@ def add_order():
 # Display all orders.
 def show_orders():
     for i in orders:
-        print(i["id"],i["user_id"],i["products"],i["total"])
+        print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
+        print("_________________________________________________")
+# Search for an order by ID.
+def search_order():
+    flag = False
+    order_id = int(input("Enter order ID: "))
+    for i in orders:
+        if i["id"] == order_id:
+            flag = True
+    if flag:
+        print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
+    else:
+        print("Order not found")
