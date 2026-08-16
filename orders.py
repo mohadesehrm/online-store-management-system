@@ -44,3 +44,7 @@ def add_order():
         }
     orders.append(order)
     save("data/orders.json",orders)
+# Display all orders.
+def show_orders():
+    for i in orders:
+        print(i["id"],i["user_id"],i["products"],i["total"])
