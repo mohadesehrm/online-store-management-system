@@ -40,6 +40,22 @@ def order_menu():
     print("3. Search Order")
     print("4. Back")
     print("----------------------------------------------------------")
+# Display the reports menu.
+def report_menu():
+    print("-------------------------REPORTS--------------------------")
+    print("1. Best-Selling Products")
+    print("2. Revenue by User")
+    print("3. Total Revenue")
+    print("4. Low-Stock Products")
+    print("5. Out-of-Stock Products")
+    print("6. Orders by User")
+    print("7. Average Order Value")
+    print("8. Highest Order")
+    print("9. Lowest Order")
+    print("10. Total Products Sold")
+    print("11. Products by Category")
+    print("12. Back")
+    print("----------------------------------------------------------")
 while True:
     main_menu()
     choice = input("Enter your choice: ")
