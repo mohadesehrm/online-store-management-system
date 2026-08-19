@@ -72,3 +72,10 @@ def highest_order():
         if order["total"] > maxx["total"]:
             maxx = order
     print(f"ID: {maxx["id"]}\nUSER_ID: {maxx["user_id"]}\nPRODUCTS: {maxx["products"]}\nTOTAL: {maxx["total"]}")
+# Display the cheapest order.
+def lowest_order():
+    minn = orders[0]
+    for order in orders:
+        if order["total"] < minn["total"]:
+            minn = order
+    print(f"ID: {minn["id"]}\nUSER_ID: {minn["user_id"]}\nPRODUCTS: {minn["products"]}\nTOTAL: {minn["total"]}")
