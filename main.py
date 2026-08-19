@@ -90,11 +90,69 @@ while True:
             else:
                 print("Invalid choice!")
     elif choice == "2" or choice == "۲":
-        print("User Management")
+        while True:
+            user_menu()
+            user_choice = input("Enter your choice: ")
+            if user_choice == "1" or user_choice == "۱":
+                users.add_user()
+            elif user_choice == "2" or user_choice == "۲":
+                users.show_users()
+            elif user_choice == "3" or user_choice == "۳":
+                users.search_user()
+            elif user_choice == "4" or user_choice == "۴":
+                users.delete_user()
+            elif user_choice == "5" or user_choice == "۵":
+                users.update_user()
+            elif user_choice == "6" or user_choice == "۶":
+                users.show_vip_users()
+            elif user_choice == "7" or user_choice == "۷":
+                break
+            else:
+                print("Invalid choice!")
     elif choice == "3" or choice == "۳":
-        print("Order Management")
+        while True:
+            order_menu()
+            order_choice = input("Enter your choice: ")
+            if order_choice == "1" or order_choice == "۱":
+                orders.add_order()
+            elif order_choice == "2" or order_choice == "۲":
+                orders.show_orders()
+            elif order_choice == "3" or order_choice == "۳":
+                orders.search_order()
+            elif order_choice == "4" or order_choice == "۴":
+                break
+            else:
+                print("Invalid choice!")
     elif choice == "4" or choice == "۴":
-        print("Reports")
+        while True:
+            report_menu()
+            report_choice = input("Enter your choice: ")
+            if report_choice == "1" or report_choice == "۱":
+                reports.best_selling_products()
+            elif report_choice == "2" or report_choice == "۲":
+                reports.revenue_by_user()
+            elif report_choice == "3" or report_choice == "۳":
+                reports.total_revenue()
+            elif report_choice == "4" or report_choice == "۴":
+                reports.low_stock_products()
+            elif report_choice == "5" or report_choice == "۵":
+                reports.out_of_stock_products()
+            elif report_choice == "6" or report_choice == "۶":
+                reports.orders_by_user()
+            elif report_choice == "7" or report_choice == "۷":
+                reports.average_order_value()
+            elif report_choice == "8" or report_choice == "۸":
+                reports.highest_order()
+            elif report_choice == "9" or report_choice == "۹":
+                reports.lowest_order()
+            elif report_choice == "10" or report_choice == "۱۰":
+                reports.total_products_sold()
+            elif report_choice == "11" or report_choice == "۱۱":
+                reports.products_by_category()
+            elif report_choice == "12" or report_choice == "۱۲":
+                break
+            else:
+                print("Invalid choice!")
     elif choice == "5" or choice == "۵":
         print("Exit!")
         break
