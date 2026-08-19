@@ -14,3 +14,16 @@ def best_selling_products():
     sorted_sales = sorted(sales.items(),key=lambda i: i[1],reverse=True)
     for product_id, quantity in sorted_sales:
         print(f"Product ID: {product_id}\nSold: {quantity}")
+# Calculate total revenue for each user.
+def revenue_by_user():
+    revenue = {}
+    for order in orders:
+        user_id = order["user_id"]
+        total = order["total"]
+        if user_id in revenue:
+            revenue[user_id] += total
+        else:
+            revenue[user_id] = total
+    for user_id, total in revenue.items():
+        print(f"User ID:{ user_id}\n Revenue: {total}")
+        print("________________________________")
