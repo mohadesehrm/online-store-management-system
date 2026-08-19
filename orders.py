@@ -29,8 +29,17 @@ def add_order():
             print("Product not found!")
             return
         quantity = int(input("Enter product quantity: "))
-        if quantity>0:
-            flag_quantity=True
+        if quantity <= 0:
+            print("Quantity must be greater than zero!")
+            return
+        # Update product stock after ordering.
+        for product in products:
+            if product["id"] == product_id:
+                if product["stock"] < quantity:
+                    print("Not enough stock!")
+                    return
+                product["stock"] -= quantity
+                break    
         productd = {
             "product_id":product_id,
             "quantity":quantity
@@ -49,6 +58,7 @@ def add_order():
         "total": total
         }
     orders.append(order)
+    save("data/products.json", products)
     save("data/orders.json",orders)
 # Display all orders.
 def show_orders():
