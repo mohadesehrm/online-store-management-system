@@ -139,3 +139,8 @@ def sort_orders_by_price():
     sorted_orders = sorted(orders, key=lambda i: i["total"])
     for i in sorted_orders:
         print(i)
+# Sort orders by total product quantity.
+def sort_orders_by_quantity():
+    sorted_orders = sorted(orders,key=lambda i: sum(product["quantity"] for product in i["products"]))
+    for i in sorted_orders:
+        print(i)
