@@ -32,6 +32,14 @@ def user_menu():
     print("6. Show VIP Users")
     print("7. Back")
     print("----------------------------------------------------------")
+    # Display the order management menu.
+def order_menu():
+    print("---------------------ORDER MANAGEMENT---------------------")
+    print("1. Add Order")
+    print("2. Show Orders")
+    print("3. Search Order")
+    print("4. Back")
+    print("----------------------------------------------------------")
 while True:
     main_menu()
     choice = input("Enter your choice: ")
