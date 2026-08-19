@@ -38,7 +38,15 @@ def order_menu():
     print("1. Add Order")
     print("2. Show Orders")
     print("3. Search Order")
-    print("4. Back")
+    print("4. Delete Order")
+    print("5. Update Order")
+    print("6. Orders by User")
+    print("7. Orders by Product")
+    print("8. Filter Orders by Price")
+    print("9. Sort Orders by Price")
+    print("10. Sort Orders by Quantity")
+    print("11. Total Sales")
+    print("12. Back")
     print("----------------------------------------------------------")
 # Display the reports menu.
 def report_menu():
@@ -110,19 +118,32 @@ while True:
             else:
                 print("Invalid choice!")
     elif choice == "3" or choice == "۳":
-        while True:
-            order_menu()
-            order_choice = input("Enter your choice: ")
-            if order_choice == "1" or order_choice == "۱":
-                orders.add_order()
-            elif order_choice == "2" or order_choice == "۲":
-                orders.show_orders()
-            elif order_choice == "3" or order_choice == "۳":
-                orders.search_order()
-            elif order_choice == "4" or order_choice == "۴":
-                break
-            else:
-                print("Invalid choice!")
+        if order_choice == "1" or order_choice == "۱":
+            orders.add_order()
+        elif order_choice == "2" or order_choice == "۲":
+            orders.show_orders()
+        elif order_choice == "3" or order_choice == "۳":
+            orders.search_order()
+        elif order_choice == "4" or order_choice == "۴":
+            orders.delete_order()
+        elif order_choice == "5" or order_choice == "۵":
+            orders.update_order()
+        elif order_choice == "6" or order_choice == "۶":
+            orders.show_user_orders()
+        elif order_choice == "7" or order_choice == "۷":
+            orders.show_product_orders()
+        elif order_choice == "8" or order_choice == "۸":
+            orders.filter_orders_by_price()
+        elif order_choice == "9" or order_choice == "۹":
+            orders.sort_orders_by_price()
+        elif order_choice == "10" or order_choice == "۱۰":
+            orders.sort_orders_by_quantity()
+        elif order_choice == "11" or order_choice == "۱۱":
+            orders.total_sales()
+        elif order_choice == "12" or order_choice == "۱۲":
+            break
+        else:
+            print("Invalid choice!")
     elif choice == "4" or choice == "۴":
         while True:
             report_menu()
