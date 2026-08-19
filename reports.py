@@ -86,3 +86,15 @@ def total_products_sold():
         for product in order["products"]:
             cnt += product["quantity"]
     print("Total products sold:", cnt)
+# Count products in each category.
+def products_by_category():
+    categories = {}
+    for product in products:
+        category = product["category"]
+        if category in categories:
+            categories[category] += 1
+        else:
+            categories[category] = 1
+    for category, count in categories.items():
+        print(f"Category: {category}\nProducts: {count}")
+        print("________________________")
