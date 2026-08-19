@@ -67,15 +67,12 @@ def show_orders():
         print("_________________________________________________")
 # Search for an order by ID.
 def search_order():
-    flag = False
     order_id = int(input("Enter order ID: "))
     for i in orders:
         if i["id"] == order_id:
-            flag = True
-    if flag:
-        print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
-    else:
-        print("Order not found")
+            print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
+            return
+    print("Order not found!")
 # Delete an order by ID.
 def delete_order():
     order_id = int(input("Enter order ID: "))
