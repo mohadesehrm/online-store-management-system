@@ -116,3 +116,21 @@ def show_user_orders():
             flag = True
     if not flag:
         print("No orders found for this user!")
+# Display orders containing a specific product.
+def show_product_orders():
+    product_id = int(input("Enter product ID: "))
+    flag = False
+    for i in orders:
+        for product in i["products"]:
+            if product["product_id"] == product_id:
+                print(i)
+                flag = True
+                break
+    if not flag:
+        print("No orders found for this product!")
+# Display orders above a specific total price.
+def filter_orders_by_price():
+    price = int(input("Enter minimum order price: "))
+    for i in orders:
+        if i["total"] >= price:
+            print(i)
