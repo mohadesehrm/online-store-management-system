@@ -27,3 +27,10 @@ def revenue_by_user():
     for user_id, total in revenue.items():
         print(f"User ID:{ user_id}\n Revenue: {total}")
         print("________________________________")
+# Calculate total store revenue.
+def total_revenue():
+    total = 0
+    for order in orders:
+        total += order["total"]
+    print("Total revenue:", total)
+total_revenue()
