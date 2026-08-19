@@ -78,10 +78,14 @@ def update_product():
         category = input("Enter product category: ")
         i["category"] = category
         price = int(input("Enter product price: "))
+        price = float(input("Enter product price: "))
+        if price < 0:
+            print("Price cannot be negative!")
         i["price"] = price
         stock = int(input("Enter product stock: "))
+        if stock < 0:
+            print("Stock cannot be negative!")
         i["stock"] = stock
-        print("Product updated successfully!")
     else:
         print("Product not found!")
     save("data/products.json",products)

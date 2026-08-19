@@ -76,9 +76,15 @@ def search_order():
 # Delete an order by ID.
 def delete_order():
     order_id = int(input("Enter order ID: "))
-    for i in orders:
-        if i["id"] == order_id:
-            orders.remove(i)
+    for order in orders:
+        if order["id"] == order_id:
+            for item in order["products"]:
+                for product in products:
+                    if product["id"] == item["product_id"]:
+                        product["stock"] += item["quantity"]
+                        break
+            orders.remove(order)
+            save("data/products.json", products)
             save("data/orders.json", orders)
             print("Order deleted successfully!")
             return
