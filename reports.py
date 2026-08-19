@@ -46,3 +46,15 @@ def out_of_stock_products():
         if product["stock"] == 0:
             print(f"ID: {product["id"]}\nName: {product["name"]}")
             print("________________________")
+# Count orders for each user.
+def orders_by_user():
+    order_count = {}
+    for order in orders:
+        user_id = order["user_id"]
+        if user_id in order_count:
+            order_count[user_id] += 1
+        else:
+            order_count[user_id] = 1
+    for user_id, count in order_count.items():
+        print(f"User ID: {user_id}\nOrders: {count}")
+        print("________________________")
