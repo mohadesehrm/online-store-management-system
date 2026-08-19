@@ -70,3 +70,22 @@ def delete_order():
             print("Order deleted successfully!")
             return
     print("Order not found!")
+# Update an order product quantity.
+def update_order():
+    order_id = int(input("Enter order ID: "))
+    for order in orders:
+        if order["id"] == order_id:
+            product_id = int(input("Enter product ID: "))
+            for product in order["products"]:
+                if product["product_id"] == product_id:
+                    quantity = int(input("Enter new quantity: "))
+                    if quantity <= 0:
+                        print("Quantity must be greater than zero!")
+                        return
+                    product["quantity"] = quantity
+                    save("data/orders.json", orders)
+                    print("Order updated successfully!")
+                    return
+            print("Product not found in this order!")
+            return
+    print("Order not found!")
