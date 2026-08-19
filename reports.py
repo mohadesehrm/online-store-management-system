@@ -79,3 +79,10 @@ def lowest_order():
         if order["total"] < minn["total"]:
             minn = order
     print(f"ID: {minn["id"]}\nUSER_ID: {minn["user_id"]}\nPRODUCTS: {minn["products"]}\nTOTAL: {minn["total"]}")
+# Calculate the total quantity of products sold.
+def total_products_sold():
+    cnt = 0
+    for order in orders:
+        for product in order["products"]:
+            cnt += product["quantity"]
+    print("Total products sold:", cnt)
