@@ -65,3 +65,10 @@ def average_order_value():
         total += order["total"]
     average = total / len(orders)
     print("Average order value:", average)
+# Display the most expensive order.
+def highest_order():
+    maxx = orders[0]
+    for order in orders:
+        if order["total"] > maxx["total"]:
+            maxx = order
+    print(f"ID: {maxx["id"]}\nUSER_ID: {maxx["user_id"]}\nPRODUCTS: {maxx["products"]}\nTOTAL: {maxx["total"]}")
