@@ -118,32 +118,35 @@ while True:
             else:
                 print("Invalid choice!")
     elif choice == "3" or choice == "۳":
-        if order_choice == "1" or order_choice == "۱":
-            orders.add_order()
-        elif order_choice == "2" or order_choice == "۲":
-            orders.show_orders()
-        elif order_choice == "3" or order_choice == "۳":
-            orders.search_order()
-        elif order_choice == "4" or order_choice == "۴":
-            orders.delete_order()
-        elif order_choice == "5" or order_choice == "۵":
-            orders.update_order()
-        elif order_choice == "6" or order_choice == "۶":
-            orders.show_user_orders()
-        elif order_choice == "7" or order_choice == "۷":
-            orders.show_product_orders()
-        elif order_choice == "8" or order_choice == "۸":
-            orders.filter_orders_by_price()
-        elif order_choice == "9" or order_choice == "۹":
-            orders.sort_orders_by_price()
-        elif order_choice == "10" or order_choice == "۱۰":
-            orders.sort_orders_by_quantity()
-        elif order_choice == "11" or order_choice == "۱۱":
-            orders.total_sales()
-        elif order_choice == "12" or order_choice == "۱۲":
-            break
-        else:
-            print("Invalid choice!")
+        while True:
+            order_menu()
+            order_choice = input("Enter your choice: ")
+            if order_choice == "1" or order_choice == "۱":
+                orders.add_order()
+            elif order_choice == "2" or order_choice == "۲":
+                orders.show_orders()
+            elif order_choice == "3" or order_choice == "۳":
+                orders.search_order()
+            elif order_choice == "4" or order_choice == "۴":
+                orders.delete_order()
+            elif order_choice == "5" or order_choice == "۵":
+                orders.update_order()
+            elif order_choice == "6" or order_choice == "۶":
+                orders.show_user_orders()
+            elif order_choice == "7" or order_choice == "۷":
+                orders.show_product_orders()
+            elif order_choice == "8" or order_choice == "۸":
+                orders.filter_orders_by_price()
+            elif order_choice == "9" or order_choice == "۹":
+                orders.sort_orders_by_price()
+            elif order_choice == "10" or order_choice == "۱۰":
+                orders.sort_orders_by_quantity()
+            elif order_choice == "11" or order_choice == "۱۱":
+                orders.total_sales()
+            elif order_choice == "12" or order_choice == "۱۲":
+                break
+            else:
+                print("Invalid choice!")
     elif choice == "4" or choice == "۴":
         while True:
             report_menu()
