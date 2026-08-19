@@ -40,3 +40,9 @@ def low_stock_products():
         if product["stock"] <= 5:
             print(f"ID: {product["id"]}\nName: {product["name"]}\nStock: {product["stock"]}")
             print("________________________")
+# Display out-of-stock products.
+def out_of_stock_products():
+    for product in products:
+        if product["stock"] == 0:
+            print(f"ID: {product["id"]}\nName: {product["name"]}")
+            print("________________________")
