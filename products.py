@@ -33,19 +33,23 @@ def show_product():
 # Search for a product by name.
 def search_name():
     name = input("Enter product name: ")
+    flag = False
     for i in products:
         if name.lower() in i["name"].lower():
-            print(i["id"],i["name"],i["category"],i["price"],i["stock"])
-        else:
-            print("Product not found!")
+            print(i["id"], i["name"], i["category"], i["price"], i["stock"])
+            flag = True
+    if not flag:
+        print("Product not found!")
 # Search for products by category.
 def search_category():
     category = input("Enter product category: ")
+    flag = False
     for i in products:
         if category.lower() in i["category"].lower():
-            print(i["id"],i["name"],i["category"],i["price"],i["stock"])
-        else:
-            print("Product not found!")
+            print(i["id"], i["name"], i["category"], i["price"], i["stock"])
+            flag = True
+    if not flag:
+        print("Product not found!")
 # Delete a product from the store.
 def delete_product():
     flag = False
