@@ -105,3 +105,14 @@ def update_order():
             print("Product not found in this order!")
             return
     print("Order not found!")
+# Display orders of a specific user.
+def show_user_orders():
+    user_id = int(input("Enter user ID: "))
+    flag = False
+    for i in orders:
+        if i["user_id"] == user_id:
+            print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
+            print("_________________________________________________")
+            flag = True
+    if not flag:
+        print("No orders found for this user!")
