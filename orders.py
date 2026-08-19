@@ -36,11 +36,17 @@ def add_order():
             "quantity":quantity
         }
         product_lst.append(productd)
+        total = 0
+        for productd in product_lst:
+            for product in products:
+                if product["id"] == productd["product_id"]:
+                    total += product["price"] * productd["quantity"]
+                    break
         order = {
         "id":order_id,
         "user_id":user_id,
         "products":product_lst,
-        "total": 12000
+        "total": total
         }
     orders.append(order)
     save("data/orders.json",orders)
