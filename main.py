@@ -20,8 +20,18 @@ def product_menu():
     print("10. Inventory Value")
     print("11. Check Stock")
     print("12. Back")
-    print("---------------------------------------------------------")
-
+    print("----------------------------------------------------------")
+# Display the user management menu.
+def user_menu():
+    print("----------------------USER MANAGEMENT---------------------")
+    print("1. Add User")
+    print("2. Show Users")
+    print("3. Search User")
+    print("4. Delete User")
+    print("5. Update User")
+    print("6. Show VIP Users")
+    print("7. Back")
+    print("----------------------------------------------------------")
 while True:
     main_menu()
     choice = input("Enter your choice: ")
