@@ -1,5 +1,6 @@
 from utils import load
 orders = load("data/orders.json")
+products = load("data/products.json")
 # Display the best-selling products.
 def best_selling_products():
     sales = {}
@@ -33,4 +34,9 @@ def total_revenue():
     for order in orders:
         total += order["total"]
     print("Total revenue:", total)
-total_revenue()
+# Display products with low stock.
+def low_stock_products():
+    for product in products:
+        if product["stock"] <= 5:
+            print(f"ID: {product["id"]}\nName: {product["name"]}\nStock: {product["stock"]}")
+            print("________________________")
