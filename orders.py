@@ -60,3 +60,13 @@ def search_order():
         print(f"ID: {i["id"]}\nUSER_ID: {i["user_id"]}\nPRODUCTS: {i["products"]}\nTOTAL: {i["total"]}")
     else:
         print("Order not found")
+# Delete an order by ID.
+def delete_order():
+    order_id = int(input("Enter order ID: "))
+    for i in orders:
+        if i["id"] == order_id:
+            orders.remove(i)
+            save("data/orders.json", orders)
+            print("Order deleted successfully!")
+            return
+    print("Order not found!")
