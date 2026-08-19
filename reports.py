@@ -58,3 +58,10 @@ def orders_by_user():
     for user_id, count in order_count.items():
         print(f"User ID: {user_id}\nOrders: {count}")
         print("________________________")
+# Calculate the average order value.
+def average_order_value():
+    total = 0
+    for order in orders:
+        total += order["total"]
+    average = total / len(orders)
+    print("Average order value:", average)
