@@ -134,3 +134,8 @@ def filter_orders_by_price():
     for i in orders:
         if i["total"] >= price:
             print(i)
+# Sort orders by total price.
+def sort_orders_by_price():
+    sorted_orders = sorted(orders, key=lambda i: i["total"])
+    for i in sorted_orders:
+        print(i)
